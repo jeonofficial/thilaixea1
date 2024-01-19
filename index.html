@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thi Bằng Lái Xe Máy A1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Thi Bằng Lái Xe Máy A1</h1>
+    </header>
+
+    <section>
+        <h2>Thông tin thí sinh</h2>
+        <div id="warningMessage" class="warning-message" style="display: none;">Vui lòng điền đầy đủ thông tin!</div>
+        <label for="name">Họ và tên:</label>
+        <input type="text" id="name" placeholder="Nhập họ và tên" pattern="[A-Za-zÀ-ÿ ]+" required>
+
+        <label for="idNumber">Số CMND:</label>
+        <input type="text" id="idNumber" placeholder="Nhập số CMND" pattern="[0-9]+" required>
+
+        <button onclick="startExam()">Bắt đầu thi</button>
+        <button id="resetButton" onclick="resetAnswers()" style="display: none;">Reset</button>
+    </section>
+
+    <section id="examSection" class="exam-section" style="display: none;">
+        <h2>Đề thi</h2>
+        <!-- Câu hỏi 1 -->
+        <div class="question">
+            <label for="answer1">
+                <p class="question-text" id="question1">1.Làm gì khi gặp đám đông người trên đường?</p>
+            </label>
+            <div class="answers">
+                <input type="radio" id="answer1a" name="answer1" value="a"> <label for="answer1a">a. Tăng tốc đi qua
+                    nhanh chóng</label><br>
+                <input type="radio" id="answer1b" name="answer1" value="b"> <label for="answer1b">b. Giảm tốc độ, chú ý
+                    quan sát và điều chỉnh tốc độ</label><br>
+                <input type="radio" id="answer1c" name="answer1" value="c"> <label for="answer1c">c. Chạy nhanh để nhanh
+                    chóng rời khỏi đám đông</label><br>
+            </div>
+        </div>
+
+        <!-- Câu hỏi 2 -->
+        <div class="question">
+            <label for="answer2">
+                <p class="question-text" id="question2">2.Khi muốn đổi hướng, bạn nên làm gì?</p>
+            </label>
+            <div class="answers">
+                <input type="radio" id="answer2a" name="answer2" value="a"> <label for="answer2a">a. Không cần báo
+                    hiệu</label><br>
+                <input type="radio" id="answer2b" name="answer2" value="b"> <label for="answer2b">b. Báo hiệu bằng đèn
+                    tín hiệu và kiểm tra an toàn rồi thực hiện đổi hướng</label><br>
+                <input type="radio" id="answer2c" name="answer2" value="c"> <label for="answer2c">c. Đổi hướng ngay lập
+                    tức mà không quan tâm đến xung quanh</label><br>
+            </div>
+        </div>
+
+        <!-- Câu hỏi 3 -->
+        <div class="question">
+            <label for="answer3">
+                <p class="question-text" id="question3">3. Khi lái xe máy, bạn nên đeo gì để bảo vệ đầu?</p>
+            </label>
+            <div class="answers">
+                <input type="radio" id="answer3a" name="answer3" value="a"> <label for="answer3a">a. Mũ bảo
+                    hiểm</label><br>
+                <input type="radio" id="answer3b" name="answer3" value="b"> <label for="answer3b">b. Kính bảo vệ
+                    mắt</label><br>
+                <input type="radio" id="answer3c" name="answer3" value="c"> <label for="answer3c">c. Cả a và
+                    b</label><br>
+            </div>
+        </div>
+
+        <!-- Câu hỏi 4 -->
+        <div class="question">
+            <label for="answer4">
+                <p class="question-text" id="question3">4. Khi lái xe máy, bạn nên đeo gì để bảo vệ đầu?</p>
+            </label>
+            <div class="answers">
+                <input type="radio" id="answer4a" name="answer4" value="a"> <label for="answer4a">a. Mũ bảo
+                    hiểm</label><br>
+                <input type="radio" id="answer4b" name="answer4" value="b"> <label for="answer4b">b. Kính bảo vệ
+                    mắt</label><br>
+                <input type="radio" id="answer4c" name="answer4" value="c"> <label for="answer4c">c. Cả a và
+                    b</label><br>
+            </div>
+        </div>
+
+        <!-- Câu hỏi 5 -->
+        <div class="question">
+            <label for="answer5">
+                <p class="question-text" id="question5">5.Khi lái xe máy, bạn cần làm gì để giữ an toàn?</p>
+            </label>
+            <div class="answers">
+                <input type="radio" id="answer5a" name="answer5" value="a"> <label for="answer5a">a. Điều chỉnh tốc độ
+                    phù hợp với điều kiện đường</label><br>
+                <input type="radio" id="answer5b" name="answer5" value="b"> <label for="answer5b">b. Sử dụng đèn xi-nhan
+                    khi đổi hướng</label><br>
+                <input type="radio" id="answer5c" name="answer5" value="c"> <label for="answer5c">c. Đảm bảo trang thiết
+                    bị an toàn đầy đủ</label><br>
+            </div>
+        </div>
+
+        <!-- Câu hỏi 6 -->
+        <div class="question">
+            <label for="answer6">
+                <p class="question-text" id="question6">6.Khi gặp biển báo "Cấm đi ngược chiều", bạn nên làm
+                    gì?</p>
+            </label>
+            <div class="answers">
+                <input type="radio" id="answer6a" name="answer6" value="a"> <label for="answer6a">a. Tiếp tục đi ngược
+                    chiều nếu đường rộng</label><br>
+                <input type="radio" id="answer6b" name="answer6" value="b"> <label for="answer6b">b. Chấp nhận phạt và
+                    tiếp tục đi</label><br>
+                <input type="radio" id="answer6c" name="answer6" value="c"> <label for="answer6c">c. Chấp nhận phạt và
+                    quay lại theo chiều đúng</label><br>
+            </div>
+        </div>
+
+        <!-- Câu hỏi 7 -->
+        <div class="question">
+            <label for="answer7">
+                <p class="question-text" id="question7">7.Bạn phải làm gì khi qua đường sắt có tàu đang đi
+                    tới?</p>
+            </label>
+            <div class="answers">
+                <input type="radio" id="answer7a" name="answer7" value="a"> <label for="answer7a">a. Tăng tốc để nhanh
+                    chóng qua đường sắt</label><br>
+                <input type="radio" id="answer7b" name="answer7" value="b"> <label for="answer7b">b. Dừng lại và chờ tàu
+                    qua hết</label><br>
+                <input type="radio" id="answer7c" name="answer7" value="c"> <label for="answer7c">c. Tiếp tục đi nhưng
+                    chú ý đảm bảo an toàn</label><br>
+            </div>
+        </div>
+
+        <!-- Câu hỏi 8 -->
+        <div class="question">
+            <label for="answer8">
+                <p class="question-text" id="question8">8.Khi lái xe máy, bạn nên kiểm tra gì trước khi khởi
+                    hành?</p>
+            </label>
+            <div class="answers">
+                <input type="radio" id="answer8a" name="answer8" value="a"> <label for="answer8a">a. Đèn xi-nhan và còi
+                    đang hoạt động</label><br>
+                <input type="radio" id="answer8b" name="answer8" value="b"> <label for="answer8b">b. Dầu và xăng
+                    đủ</label><br>
+                <input type="radio" id="answer8c" name="answer8" value="c"> <label for="answer8c">c. Cả a và
+                    b</label><br>
+            </div>
+        </div>
+
+        <!-- Câu hỏi 9 -->
+        <div class="question">
+            <label for="answer9">
+                <p class="question-text" id="question9">9.Khi điều khiển xe qua đường sắt, bạn phải chú ý
+                    đến gì?</p>
+            </label>
+            <div class="answers">
+                <input type="radio" id="answer9a" name="answer9" value="a"> <label for="answer9a">a. Biển báo tín hiệu
+                    đèn và cổng đường sắt</label><br>
+                <input type="radio" id="answer9b" name="answer9" value="b"> <label for="answer9b">b. Tiếng còi tàu và
+                    ánh đèn tín hiệu</label><br>
+                <input type="radio" id="answer9c" name="answer9" value="c"> <label for="answer9c">c. Cả a và
+                    b</label><br>
+            </div>
+        </div>
+
+        <!-- Câu hỏi 10 -->
+        <div class="question">
+            <label for="answer10">
+                <p class="question-text" id="question10">10.Bạn nên đỗ xe như thế nào khi đậu trên đường
+                    dốc?</p>
+            </label>
+            <div class="answers">
+                <input type="radio" id="answer10a" name="answer10" value="a"> <label for="answer10a">a. Đỗ chặt bánh xe
+                    và kéo phanh tay</label><br>
+                <input type="radio" id="answer10b" name="answer10" value="b"> <label for="answer10b">b. Chỉ cần kéo
+                    phanh tay</label><br>
+                <input type="radio" id="answer10c" name="answer10" value="c"> <label for="answer10c">c. Bất kỳ cách nào,
+                    miễn là không trơn trượt</label><br>
+            </div>
+        </div>
+
+        <button onclick="submitExam()">Nộp bài</button>
+        <button id="resetButton" onclick="resetAnswers()">Reset</button>
+    </section>
+
+    <section id="resultSection" style="display: none;">
+        <h2>Kết Quả Bài Thi</h2>
+        <div id="resultContainer"></div>
+
+        <h2>Điểm Số</h2>
+        <p id="resultMessage"></p>
+    </section>
+
+    <button id="fixed-div" onclick="reloadPage()">Quay lại</button>
+
+    <script src="script.js"></script>
+    <script type='text/javascript'>
+        var startButton = document.getElementById('startButton');
+        var nameInput = document.getElementById('name');
+        var idInput = document.getElementById('idNumber');
+        var warningMessage = document.getElementById('warningMessage');
+
+        nameInput.addEventListener('input', function () {
+            var name = nameInput.value.trim().toUpperCase();
+            var regex = /^[A-ZÀ-Ý ]+$/;
+            if (!regex.test(name)) {
+                warningMessage.textContent = 'Chỉ được nhập chữ cái, dấu và khoảng trắng vào phần Họ Tên';
+                warningMessage.style.display = 'block';
+                warningMessage.style.color = 'red';
+                nameInput.value = '';
+            } else {
+                warningMessage.style.display = 'none';
+            }
+        });
+
+        idInput.addEventListener('input', function () {
+            var id = idInput.value.trim();
+            var regex = /^[0-9]+$/;
+            if (!regex.test(id)) {
+                warningMessage.textContent = 'Chỉ được nhập số vào phần CMND/CCCD';
+                warningMessage.style.display = 'block';
+                warningMessage.style.color = 'red';
+                idInput.value = '';
+            } else {
+                warningMessage.style.display = 'none';
+            }
+        });
+
+        function resetAnswers() {
+            // Lấy tất cả các input có type là radio
+            var radios = document.querySelectorAll("input[type=radio]");
+            // Duyệt qua từng input
+            for (var i = 0; i < radios.length; i++) {
+                // Nếu input nào đang được chọn thì bỏ chọn nó
+                if (radios[i].checked) {
+                    radios[i].checked = false;
+                }
+            }
+        }
+
+        // Thêm sự kiện cho nút bắt đầu thi
+        document.querySelector('button').addEventListener('click', function () {
+            var nameInput = document.getElementById('name');
+            var idInput = document.getElementById('idNumber');
+            var warningMessage = document.getElementById('warningMessage');
+
+            // Kiểm tra xem các trường đã được điền đầy đủ hay không
+            if (nameInput.checkValidity() && idInput.checkValidity()) {
+                // Nếu đầy đủ, ẩn cảnh báo và thực hiện bắt đầu thi
+                warningMessage.style.display = 'none';
+                startExam();
+            } else {
+                // Nếu chưa đầy đủ, hiển thị cảnh báo
+                warningMessage.style.display = 'block';
+                warningMessage.style.color = 'red';
+            }
+        });
+
+
+        // Ngăn chặn coppy bằng chuột phải
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault(); // Ngăn chặn menu ngữ cảnh mặc định
+            alert('Chức năng này đã bị vô hiệu hóa'); // Hiển thị thông báo cảnh báo
+        });
+
+        // Ngăn chặn coppy bằng phím tắt Ctrl+C
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && e.keyCode == 67) { // Nếu nhấn cùng lúc phím Ctrl và C
+                e.preventDefault(); // Ngăn chặn hành động mặc định
+                alert('Chức năng này đã bị vô hiệu hóa'); // Hiển thị thông báo cảnh báo
+            }
+        });
+
+        // Ngăn chặn xem phần dev tool (F12) bằng phím tắt F12 hoặc Ctrl+Shift+I
+        document.addEventListener('keydown', function (e) {
+            if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode ==
+                    73)) { // Nếu nhấn phím F12 hoặc cùng lúc phím Ctrl, Shift và I
+                e.preventDefault(); // Ngăn chặn hành động mặc định
+                alert('Chức năng này đã bị vô hiệu hóa'); // Hiển thị thông báo cảnh báo
+            }
+        });
+
+        function reloadPage() {
+            window.location.reload();
+        }
+    </script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAOlAlO9uOfkxghLO7m59Tr9P3CS7g4k_I",
+          authDomain: "thi-trac-nghiem-7917d.firebaseapp.com",
+          projectId: "thi-trac-nghiem-7917d",
+          storageBucket: "thi-trac-nghiem-7917d.appspot.com",
+          messagingSenderId: "930088317866",
+          appId: "1:930088317866:web:8e3807eb4a5f94eb7271d3",
+          measurementId: "G-HL8CZD3KD0"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+</body>
+
+</html>
